@@ -9,9 +9,7 @@ object Main extends App {
 object Chapter2 {
 
   object Exercise1 {
-    final def apply() = {
-      (1 to 10).map(fib)
-    }
+    final def apply() = (1 to 10).map(fib)
 
     def fib(n: Int): Int = {
       @tailrec
@@ -34,9 +32,7 @@ object Chapter2 {
       (isSorted((1 to 10).toArray, ordered), isSorted((10 to 1).toArray, ordered))
     }
 
-    def isSorted[A](as: Array[A], ordered: (A, A) => Boolean): Boolean = {
-      as.sliding(2).forall(a => ordered(a(0), a(1)))
-    }
+    def isSorted[A](as: Array[A], ordered: (A, A) => Boolean): Boolean = as.sliding(2).forall(a => ordered(a(0), a(1)))
   }
 
 }
