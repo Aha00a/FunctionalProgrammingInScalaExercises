@@ -1,7 +1,9 @@
+
 import scala.annotation.tailrec
 
 object Main extends App {
   println(Chapter2.Exercise1())
+  println(Chapter2.Exercise2())
 }
 
 object Chapter2 {
@@ -25,4 +27,15 @@ object Chapter2 {
 
   }
 
+  object Exercise2 {
+    final def apply() = {
+      val ordered: (Int, Int) => Boolean = (lhs: Int, rhs: Int) => { lhs < rhs }
+
+      (isSorted((1 to 10).toArray, ordered), isSorted((10 to 1).toArray, ordered))
+    }
+
+    def isSorted[A](as: Array[A], ordered: (A, A) => Boolean): Boolean = {
+      as.sliding(2).forall(a => ordered(a(0), a(1)))
+    }
+  }
 }
