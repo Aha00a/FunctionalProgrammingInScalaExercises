@@ -2,8 +2,7 @@
 import scala.annotation.tailrec
 
 object Main extends App {
-  println(Chapter2.Exercise1())
-  println(Chapter2.Exercise2())
+  Seq(Chapter2.Exercise1(), Chapter2.Exercise2()).foreach(println)
 }
 
 object Chapter2 {
