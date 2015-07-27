@@ -2,7 +2,13 @@ import scala.annotation.tailrec
 
 object Chapter2 {
   final def apply() = {
-    Seq(Chapter2.Exercise1(), Chapter2.Exercise2(), Chapter2.Exercise3(), Chapter2.Exercise4(), Chapter2.Exercise5()).foreach(println)
+    Seq(
+      Chapter2.Exercise1(),
+      Chapter2.Exercise2(),
+      Chapter2.Exercise3(),
+      Chapter2.Exercise4(),
+      Chapter2.Exercise5()
+    ).foreach(println)
   }
 
 
