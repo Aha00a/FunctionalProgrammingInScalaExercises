@@ -2,7 +2,7 @@
 import scala.annotation.tailrec
 
 object Main extends App {
-  Seq(Chapter2.Exercise1(), Chapter2.Exercise2(), Chapter2.Exercise3()).foreach(println)
+  Seq(Chapter2.Exercise1(), Chapter2.Exercise2(), Chapter2.Exercise3(), Chapter2.Exercise4()).foreach(println)
 }
 
 object Chapter2 {
@@ -41,6 +41,17 @@ object Chapter2 {
     }
 
     def curry[A, B, C](f: (A, B) => C): A => (B => C) = (a: A) => (b: B) => f(a, b)
+  }
+
+  object Exercise4 {
+    final def apply() = {
+      def sumAndString(a: Int, b: Long): String = (a + b).toString
+      val curried = Exercise3.curry(sumAndString)
+      uncurry(curried)(5, 10)
+    }
+
+    //noinspection SpellCheckingInspection
+    def uncurry[A, B, C](f: A => B => C): (A, B) => C = (a, b) => f(a)(b)
   }
 
 }
