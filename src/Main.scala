@@ -15,14 +15,14 @@ object Chapter2 {
 
     def fib(n: Int): Int = {
       @tailrec
-      def aux(n: Int, v1: Int, v2: Int): Int = {
+      def rec(n: Int, v1: Int, v2: Int): Int = {
         if (n == 0)
           v1
         else
-          aux(n - 1, v2, v2 + v1)
+          rec(n - 1, v2, v2 + v1)
       }
 
-      aux(n, 0, 1)
+      rec(n, 0, 1)
     }
 
   }
