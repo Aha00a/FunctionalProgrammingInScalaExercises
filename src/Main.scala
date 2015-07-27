@@ -29,7 +29,7 @@ object Chapter2 {
 
   object Exercise2 {
     final def apply() = {
-      val ordered: (Int, Int) => Boolean = (lhs: Int, rhs: Int) => { lhs < rhs }
+      val ordered: (Int, Int) => Boolean = (lhs: Int, rhs: Int) => lhs < rhs
 
       (isSorted((1 to 10).toArray, ordered), isSorted((10 to 1).toArray, ordered))
     }
@@ -38,4 +38,5 @@ object Chapter2 {
       as.sliding(2).forall(a => ordered(a(0), a(1)))
     }
   }
+
 }
